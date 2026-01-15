@@ -25,8 +25,8 @@ const UnifiedLogin: React.FC<UnifiedLoginProps> = ({ onLogin }) => {
                 setError('Đăng nhập thất bại.');
                 setLoading(false);
             }
-        } catch (err: any) {
-            setError(err.message || 'Tài khoản hoặc mật khẩu không chính xác!');
+        } catch (err) {
+            setError('Tài khoản hoặc mật khẩu không chính xác!');
             setLoading(false);
         }
     };
