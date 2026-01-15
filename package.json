@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.90.1",
     "@types/html2pdf.js": "^0.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "html2pdf.js": "^0.14.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

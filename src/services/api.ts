@@ -27,7 +27,10 @@ export const ApiService = {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(creds)
         });
-        if (!res.ok) throw new Error('Login failed');
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(`Login failed: ${res.status} ${res.statusText} - ${text.substring(0, 100)}`);
+        }
         return res.json();
     },
 
