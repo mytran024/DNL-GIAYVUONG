@@ -1,0 +1,7 @@
+{
+  "name": "Danalog Logistics - Paper Container Management",
+  "description": "A comprehensive logistics management system for CS departments to handle paper container extraction, vessel imports, tally reports, and production analytics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

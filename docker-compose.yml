@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  # Backend Service (Node.js + SQLite)
+  backend:
+    build: 
+      context: ./server
+      dockerfile: Dockerfile
+    image: danalog-backend
+    container_name: danalog-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data # Persist SQLite database to host folder ./data
+    environment:
+      - PORT=3000
+
+  # Frontend Service (Nginx + React Build)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: danalog-frontend
+    container_name: danalog-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  # Optional: Watchtower to auto-update if images change (omitted for local deploy)
